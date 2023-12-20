@@ -20,7 +20,7 @@ def main():
         type=str,
         default='RealESRGAN_x4plus',
         help=('Model names: RealESRGAN_x4plus | RealESRNet_x4plus | RealESRGAN_x4plus_anime_6B | RealESRGAN_x2plus | '
-              'realesr-animevideov3 | realesr-general-x4v3 | 8x_NMKD-Superscale_150000_G | 4K-UltraSharp'))
+              'realesr-animevideov3 | realesr-general-x4v3'))
     parser.add_argument('-o', '--output', type=str, default='results', help='Output folder')
     parser.add_argument(
         '-dn',
@@ -68,6 +68,9 @@ def main():
         model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=6, num_grow_ch=32, scale=4)
         netscale = 4
         file_url = ['https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGAN_x4plus_anime_6B.pth']
+
+    
+        # i tried to run this but didnt work xd same for nmkd too lool
     elif args.model_name == '4K-UltraSharp':  # x4 UltraSharp
         model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=23, num_grow_ch=32, scale=4)
         netscale = 4
@@ -76,6 +79,8 @@ def main():
         model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=23, num_grow_ch=32, scale=8)
         netscale = 8
         file_url = ['https://github.com/Vampire-Chan/Real-ESRGAN/releases/download/test/8x_NMKD-Superscale_150000_G.pth']
+
+    
     elif args.model_name == 'RealESRGAN_x2plus':  # x2 RRDBNet model
         model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=23, num_grow_ch=32, scale=2)
         netscale = 2
