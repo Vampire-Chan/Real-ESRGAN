@@ -71,11 +71,11 @@ def main():
     elif args.model_name == '4K-UltraSharp':  # x4 UltraSharp
         model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=23, num_grow_ch=32, scale=4)
         netscale = 4
-        file_url = ['/content/drive/MyDrive/ESRGAN_Models/4x-UltraSharp.pth']
+        file_url = ['https://github.com/Vampire-Chan/Real-ESRGAN/releases/download/test/4x-UltraSharp.pth']
     elif args.model_name == '8x_NMKD-Superscale_150000_G':  # x8 NMKD-Superscale_150000_G
         model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=23, num_grow_ch=32, scale=8)
         netscale = 8
-        file_url = ['/content/drive/MyDrive/ESRGAN_Models/8x_NMKD-Superscale_150000_G.pth']
+        file_url = ['https://github.com/Vampire-Chan/Real-ESRGAN/releases/download/test/8x_NMKD-Superscale_150000_G.pth']
     elif args.model_name == 'RealESRGAN_x2plus':  # x2 RRDBNet model
         model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=23, num_grow_ch=32, scale=2)
         netscale = 2
